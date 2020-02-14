@@ -1,19 +1,7 @@
-#include <iostream>
-#include <SFML/Graphics.hpp>
+#include "Game Engine/Game.hpp"
+#include "Game Engine/DEFINITIONS.hpp"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(800, 600), "Missile Escape");
-
-	while (window.isOpen())
-	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
-		window.clear();
-		window.display();
-	}
+	GameEngine::Game(SCREEN_WIDTH, SCREEN_HEIGHT, "Tic-Tac-Toe");
 }
