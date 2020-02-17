@@ -90,7 +90,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(solutionDir)Dependencies\SFML\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(solutionDir)Missile Escape;$(solutionDir)Dependencies\SFML\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -107,7 +107,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(solutionDir)Dependencies\SFML\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(solutionDir)Missile Escape;$(solutionDir)Dependencies\SFML\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,7 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(solutionDir)Dependencies\SFML\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(solutionDir)Missile Escape;$(solutionDir)Dependencies\SFML\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,7 +147,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(solutionDir)Dependencies\SFML\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(solutionDir)Missile Escape;$(solutionDir)Dependencies\SFML\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -160,20 +160,37 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game Engine\AssetManager.cpp" />
+    <ClCompile Include="Game Engine\Camera.cpp" />
     <ClCompile Include="Game Engine\Game.cpp" />
     <ClCompile Include="Game Engine\InputManager.cpp" />
-    <ClCompile Include="Game Engine\SplashState.cpp" />
+    <ClCompile Include="Game Engine\Mathematics.cpp" />
     <ClCompile Include="Game Engine\StateMachine.cpp" />
+    <ClCompile Include="Game\CloudsSpanwer.cpp" />
+    <ClCompile Include="Game\CloudsSpawner.cpp" />
+    <ClCompile Include="Game\HomingMissile.cpp" />
+    <ClCompile Include="Game\HomingMissileSpawner.cpp" />
+    <ClCompile Include="Game\Plane.cpp" />
     <ClCompile Include="Missile Escape.cpp" />
+    <ClCompile Include="UI\GameState.cpp" />
+    <ClCompile Include="UI\MenuState.cpp" />
+    <ClCompile Include="UI\SplashState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game Engine\AssetManager.hpp" />
+    <ClInclude Include="Game Engine\Camera.hpp" />
     <ClInclude Include="Game Engine\DEFINITIONS.hpp" />
     <ClInclude Include="Game Engine\Game.hpp" />
     <ClInclude Include="Game Engine\InputManager.hpp" />
-    <ClInclude Include="Game Engine\SplashState.hpp" />
+    <ClInclude Include="Game Engine\Matematics.hpp" />
     <ClInclude Include="Game Engine\State.hpp" />
     <ClInclude Include="Game Engine\StateMachine.hpp" />
+    <ClInclude Include="Game\CloudsSpawner.hpp" />
+    <ClInclude Include="Game\HomingMissile.hpp" />
+    <ClInclude Include="Game\HomingMissileSpawner.hpp" />
+    <ClInclude Include="Game\Plane.hpp" />
+    <ClInclude Include="UI\GameState.hpp" />
+    <ClInclude Include="UI\MenuState.hpp" />
+    <ClInclude Include="UI\SplashState.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

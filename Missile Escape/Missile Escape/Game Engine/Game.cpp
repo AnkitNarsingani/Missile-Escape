@@ -1,5 +1,6 @@
 #include "Game.hpp"
-#include "SplashState.hpp"
+#include "UI/SplashState.hpp"
+using namespace UI;
 
 namespace GameEngine
 {

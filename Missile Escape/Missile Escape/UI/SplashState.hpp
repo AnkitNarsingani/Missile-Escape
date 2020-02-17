@@ -1,10 +1,11 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "State.hpp"
-#include "Game.hpp"
+#include "Game Engine/State.hpp"
+#include "Game Engine/Game.hpp"
+using namespace GameEngine;
 
-namespace GameEngine
+namespace UI
 {
 	class SplashState : public State
 	{
