@@ -3,5 +3,5 @@
 
 int main()
 {
-	GameEngine::Game(SCREEN_WIDTH, SCREEN_HEIGHT, "Tic-Tac-Toe");
+	GameEngine::Game(SCREEN_WIDTH, SCREEN_HEIGHT, "Missile Escape");
 }

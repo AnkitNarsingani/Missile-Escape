@@ -1,6 +1,5 @@
 #pragma once
 
-#include <iostream>
 #include "CloudsSpawner.hpp"
 #include "Game Engine/DEFINITIONS.hpp"
 
@@ -30,12 +29,10 @@ namespace Game
 		_cloud.setOrigin(sf::Vector2f(_cloud.getTexture()->getSize().x * 0.5f,
 			_cloud.getTexture()->getSize().y * 0.5f));
 
-		_cloud.setScale(sf::Vector2f(0.1f, 0.1f));
-		_cloud.setPosition(centerCoordinates);
+		_cloud.setScale(sf::Vector2f(0.07f, 0.07f));
+		_cloud.setPosition(GetRandomSpawnPoint(centerCoordinates));
 
 		_cloudsInScene.push_back(_cloud);
-
-		std::cout << "CLOUD X: " << _cloud.getPosition().x << "CLOUD Y: " << _cloud.getPosition().y << std::endl;
 	}
 
 	sf::Vector2f CloudsSpawner::GetRandomSpawnPoint(sf::Vector2f centerCoordinates)

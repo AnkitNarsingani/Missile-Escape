@@ -22,4 +22,12 @@ namespace GameEngine
 		_cameraView.setCenter(player.getPosition());
 		this->_data->window.setView(_cameraView);
 	}
+
+	void Camera::Reset()
+	{
+		_cameraView.reset(sf::FloatRect(0, 0, this->_data->window.getSize().x, this->_data->window.getSize().y));
+		_cameraView.setCenter(0, 0);
+		_cameraView.move(500, 270);
+		this->_data->window.setView(_cameraView);
+	}
 }

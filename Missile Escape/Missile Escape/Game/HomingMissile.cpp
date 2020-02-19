@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "HomingMissile.hpp"
+#include "UI/GameOverState.hpp"
 #include "Game Engine/Matematics.hpp"
 #include "Game Engine/DEFINITIONS.hpp"
 
@@ -20,21 +21,75 @@ namespace Game
 		_missile.setPosition(spawnPos);
 	}
 
-	void HomingMissile::ChaseTarget(float delta, sf::Sprite& _target)
+	void HomingMissile::Update(float delta, sf::Sprite& target, std::vector<HomingMissile*>& homingMissiles)
 	{
-		sf::Vector2f desiredVelocity = _target.getPosition() - _missile.getPosition();
+		ChaseTarget(delta, target);
+		CheckCollisions(homingMissiles, target);
+	}
+
+	void HomingMissile::ChaseTarget(float delta, sf::Sprite& target)
+	{
+		sf::Vector2f desiredVelocity = target.getPosition() - _missile.getPosition();
 		Mathematics::Normalize(desiredVelocity);
 		desiredVelocity *= (float)MISSILE_SPEED;
 		sf::Vector2f steer = desiredVelocity - _velocity;
 		_velocity = Mathematics::ClampMagnitude(_velocity + steer * (float)50 * delta, 150);
 		_missile.move(_velocity * delta);
-		float angle = atan2(desiredVelocity.y, desiredVelocity.x) * 57.296f;
-		_missile.setRotation(angle);
 		sf::Vector2f temp = _missile.getPosition() + _velocity * delta;
+
+		LookAt(target);
+	}
+
+	void HomingMissile::LookAt(sf::Sprite target)
+	{
+		sf::Vector2f desiredVelocity = target.getPosition() - _missile.getPosition();
+		float angle = (atan2(desiredVelocity.y, desiredVelocity.x) * 57.296f) - 270;
+		_missile.setRotation(angle);
+	}
+
+	void HomingMissile::CheckCollisions(std::vector<HomingMissile*>& homingMissiles, sf::Sprite player)
+	{
+		if (_missile.getGlobalBounds().intersects(player.getGlobalBounds()))
+		{
+			this->_data->machine.AddState(StateRef(new UI::GameOverState(_data)));
+		}
+		else
+		{
+			for (size_t i = 0; i < homingMissiles.size(); i++)
+			{
+				if (!Compare(_missile.getPosition(), homingMissiles[i]->_missile.getPosition()))
+				{
+					if (_missile.getGlobalBounds().intersects(homingMissiles[i]->_missile.getGlobalBounds()))
+					{
+						homingMissiles[i]->Destroy(homingMissiles);
+						Destroy(homingMissiles);
+					}
+				}
+			}
+		}
+	}
+
+	void HomingMissile::Destroy(std::vector<HomingMissile*>& homingMissiles)
+	{
+		for (size_t i = 0; i < homingMissiles.size(); i++)
+		{
+			if (Compare(_missile.getPosition(), homingMissiles[i]->_missile.getPosition()))
+			{
+				homingMissiles.erase(homingMissiles.begin() + i);
+			}
+		}
 	}
 
 	void HomingMissile::Draw()
 	{
 		this->_data->window.draw(_missile);
+	}
+
+	bool HomingMissile::Compare(sf::Vector2f a, sf::Vector2f b)
+	{
+		if (a.x == b.x && a.y == b.y)
+			return true;
+		else
+			return false;
 	}
 }

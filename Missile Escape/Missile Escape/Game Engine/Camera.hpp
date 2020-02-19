@@ -12,6 +12,7 @@ namespace GameEngine
 
 		void Move(float xOffset, float yOffset);
 		void Follow(sf::Sprite player);
+		void Reset();
 
 	private:
 		GameDataRef _data;

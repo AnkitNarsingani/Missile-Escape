@@ -171,6 +171,7 @@
     <ClCompile Include="Game\HomingMissileSpawner.cpp" />
     <ClCompile Include="Game\Plane.cpp" />
     <ClCompile Include="Missile Escape.cpp" />
+    <ClCompile Include="UI\GameOverState.cpp" />
     <ClCompile Include="UI\GameState.cpp" />
     <ClCompile Include="UI\MenuState.cpp" />
     <ClCompile Include="UI\SplashState.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="Game\HomingMissile.hpp" />
     <ClInclude Include="Game\HomingMissileSpawner.hpp" />
     <ClInclude Include="Game\Plane.hpp" />
+    <ClInclude Include="UI\GameOverState.hpp" />
     <ClInclude Include="UI\GameState.hpp" />
     <ClInclude Include="UI\MenuState.hpp" />
     <ClInclude Include="UI\SplashState.hpp" />

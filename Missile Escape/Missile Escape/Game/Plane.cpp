@@ -18,11 +18,6 @@ namespace Game
 		_planeSprite.setOrigin(sf::Vector2f(_planeSprite.getTexture()->getSize().x * 0.5f,
 			_planeSprite.getTexture()->getSize().y * 0.5f));
 
-		_data->assets.LoadTexture("Cloud", GAME_SCENE_CLOUD_FILEPATH);
-		_cloud.setTexture(_data->assets.GetTexture("Cloud"));		
-
-		
-		_cloud.setPosition(sf::Vector2f(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2));
 		_planeSprite.setPosition(sf::Vector2f(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2));
 	}
 
@@ -51,7 +46,6 @@ namespace Game
 
 	void Plane::Draw()
 	{
-		this->_data->window.draw(_cloud);
 		this->_data->window.draw(_planeSprite);
 	}
 }

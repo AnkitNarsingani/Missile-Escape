@@ -28,7 +28,6 @@ namespace Game
 		GameDataRef _data;
 
 		sf::Sprite _planeSprite;
-		sf::Sprite _cloud;
 
 		Camera *camera;
 	};

@@ -39,8 +39,9 @@ namespace UI
 	void GameState::Draw(float dt)
 	{
 		this->_data->window.clear(sf::Color(153, 217, 234));
+		cloudsSpawner->Draw();
 		plane->Draw();
-		homingMissileSpawner->Draw();
+		homingMissileSpawner->Draw();	
 		this->_data->window.display();
 	}
 }

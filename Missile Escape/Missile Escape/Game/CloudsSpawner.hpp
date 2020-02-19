@@ -12,16 +12,17 @@ namespace Game
 	public:
 		CloudsSpawner(GameDataRef data);
 		void Update(float dt, sf::Sprite& player);
+		void Draw();
 
 	private:
-		void Draw();
+		
 		void Spawn(sf::Vector2f centerCoordinates);
 		sf::Vector2f GetRandomSpawnPoint(sf::Vector2f centerCoordinates);
 
 		GameDataRef _data;
 
 		float timer = 0;
-		float timeToWait = 2;
+		float timeToWait = 1.5;
 
 		sf::Sprite _cloud;
 

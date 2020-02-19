@@ -60,6 +60,9 @@
     <ClCompile Include="Game\CloudsSpawner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UI\GameOverState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game Engine\State.hpp">
@@ -105,6 +108,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game\CloudsSpawner.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\GameOverState.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

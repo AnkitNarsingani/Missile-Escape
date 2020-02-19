@@ -10,7 +10,7 @@ namespace Game
 {
 	HomingMissileSpawner::HomingMissileSpawner(GameDataRef data) : _data(data)
 	{
-		srand(time(0));
+		srand(time(NULL));
 	}
 
 	void HomingMissileSpawner::Update(float dt, sf::Sprite& player)
@@ -25,7 +25,7 @@ namespace Game
 
 		for (size_t i = 0; i < _missilesInScene.size(); i++)
 		{
-			_missilesInScene[i]->ChaseTarget(dt, player);
+			_missilesInScene[i]->Update(dt, player, _missilesInScene);
 		}
 	}
 
