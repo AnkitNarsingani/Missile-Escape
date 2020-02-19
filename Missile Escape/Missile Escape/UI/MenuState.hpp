@@ -20,10 +20,21 @@ namespace UI
 		void Draw(float dt);
 
 	private:
+
+		void Spawn();
+		void MoveClouds(float dt);
+
+
+		float timer = 0;
+		float timeToWait = 1.5;
+
 		GameDataRef _data;
 
 		sf::Sprite _titleImage;
 		sf::Sprite _playButton;
 		sf::Sprite _exitButton;
+		sf::Sprite _cloud;
+
+		std::vector<sf::Sprite> _cloudsInScene;
 	};
 }

@@ -57,9 +57,6 @@
     <ClCompile Include="Game\CloudsSpanwer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\CloudsSpawner.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="UI\GameOverState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

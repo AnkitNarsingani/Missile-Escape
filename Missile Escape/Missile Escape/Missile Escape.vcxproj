@@ -166,7 +166,6 @@
     <ClCompile Include="Game Engine\Mathematics.cpp" />
     <ClCompile Include="Game Engine\StateMachine.cpp" />
     <ClCompile Include="Game\CloudsSpanwer.cpp" />
-    <ClCompile Include="Game\CloudsSpawner.cpp" />
     <ClCompile Include="Game\HomingMissile.cpp" />
     <ClCompile Include="Game\HomingMissileSpawner.cpp" />
     <ClCompile Include="Game\Plane.cpp" />
